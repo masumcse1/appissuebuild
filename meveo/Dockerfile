@@ -56,7 +56,8 @@ RUN mv wildfly-18.0.1.Final/* /opt/jboss/wildfly
 
 WORKDIR /opt/jboss/wildfly/standalone/deployments
 
-COPY  --from=build-servlets /usr/src/appissuebuild/meveo/meveo-admin/web/target/meveo-admin-web-7.0.0-SNAPSHOT.war  meveo.war
+COPY  --from=build-servlets /usr/src/appissuebuild/meveo/meveo-admin/meveo-admin-web/target/meveo-admin-web-7.0.0-SNAPSHOT.war  meveo.war
+                                    
 
                                   
 
