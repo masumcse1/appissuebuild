@@ -8,9 +8,9 @@ FROM maven:3.6-jdk-11-slim AS build-servlets
 RUN apt-get -y update
 RUN apt-get -y install git
  
-ARG SCM="scm:git:ssh://git@github.com:masumcse1/appfrmsss.git"
+ARG SCM="scm:git:ssh://git@github.com:masumcse1/appissuebuild.git"
 
-WORKDIR /usr/src/appfrmsss/meveo
+WORKDIR /usr/src/appissuebuild/meveo
 
 COPY . .
 
@@ -56,7 +56,7 @@ RUN mv wildfly-18.0.1.Final/* /opt/jboss/wildfly
 
 WORKDIR /opt/jboss/wildfly/standalone/deployments
 
-COPY  --from=build-servlets /usr/src/appfrmsss/meveo/meveo-admin/web/target/meveo-admin-web-7.0.0-SNAPSHOT.war  meveo.war
+COPY  --from=build-servlets /usr/src/appissuebuild/meveo/meveo-admin/web/target/meveo-admin-web-7.0.0-SNAPSHOT.war  meveo.war
 
                                   
 
